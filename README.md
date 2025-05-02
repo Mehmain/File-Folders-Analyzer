@@ -49,3 +49,6 @@ For developers:
 ```bash
 git clone https://github.com/your-username/folder-analyzer.git
 cd folder-analyzer
+
+  Link:
+https://mehmain.github.io/File-Folders-Analyzer/
