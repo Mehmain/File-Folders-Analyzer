@@ -1,6 +1,6 @@
 # 📂 Folder & File Analyzer
 
-![https://files.catbox.moe/v82cxz.png](demo-screenshot.png)
+![demo screenshot.png](https://files.catbox.moe/v82cxz.png)
 
 A lightweight, client-side web tool to analyze directory structures and count files/folders directly in your browser.
 
