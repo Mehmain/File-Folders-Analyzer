@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Folder & File Analyzer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         :root {
             --primary: #4361ee;
@@ -26,38 +24,38 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2vw;
+            padding: 20px;
         }
         
         .container {
             background: white;
-            border-radius: 1rem;
-            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 600px;
-            padding: 2rem;
+            max-width: 500px;
+            padding: 30px;
             text-align: center;
             transition: all 0.3s ease;
         }
         
         h1 {
             color: var(--dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 24px;
         }
         
         .upload-area {
             border: 2px dashed #ccc;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
@@ -70,20 +68,20 @@
         }
         
         .upload-icon {
-            font-size: 3rem;
+            font-size: 48px;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
         
         .upload-text {
             color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 18px;
         }
         
         .upload-hint {
             color: #6c757d;
-            font-size: 0.9rem;
+            font-size: 14px;
         }
         
         #folderInput {
@@ -96,59 +94,24 @@
             cursor: pointer;
         }
         
-        .webhook-toggle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: var(--primary);
-        }
-        
-        .webhook-toggle:hover {
-            color: var(--primary-dark);
-        }
-        
-        .webhook-input-container {
-            display: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .webhook-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            color: var(--dark);
-        }
-        
-        .webhook-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0.5rem rgba(67, 97, 238, 0.3);
-        }
-        
         .btn {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-size: 1rem;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
-            margin-bottom: 1rem;
-            touch-action: manipulation;
+            margin-bottom: 15px;
         }
         
         .btn:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 0.3rem 1rem rgba(67, 97, 238, 0.3);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
         }
         
         .btn:active {
@@ -170,61 +133,25 @@
             background: #d41c6f;
         }
         
-        .contact-form {
-            background: #f8f9fa;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-        
-        .contact-form h2 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        .contact-input {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            color: var(--dark);
-        }
-        
-        .contact-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0.5rem rgba(67, 97, 238, 0.3);
-        }
-        
-        .contact-input--textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
         .result-container {
             background: #f8f9fa;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 20px;
             text-align: left;
             display: none;
         }
         
         .result-title {
-            font-size: 1.2rem;
+            font-size: 18px;
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
             color: var(--dark);
         }
         
         .stats {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
         
         .stat {
@@ -233,14 +160,14 @@
         }
         
         .stat-value {
-            font-size: 2rem;
+            font-size: 32px;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 5px;
         }
         
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 14px;
             color: #6c757d;
         }
         
@@ -248,13 +175,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 15px;
         }
         
         .like-btn {
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 24px;
             cursor: pointer;
             color: #6c757d;
             transition: color 0.2s, transform 0.2s;
@@ -269,29 +196,29 @@
         }
         
         .like-count {
-            margin-left: 0.5rem;
-            font-size: 1rem;
+            margin-left: 8px;
+            font-size: 16px;
             color: var(--dark);
         }
         
         .analysis-timestamp {
-            font-size: 0.9rem;
+            font-size: 14px;
             color: #6c757d;
             text-align: center;
-            margin-top: 1rem;
+            margin-top: 15px;
         }
         
         .progress-container {
-            margin-top: 1.5rem;
+            margin-top: 20px;
             display: none;
         }
         
         .progress-bar {
-            height: 0.5rem;
+            height: 8px;
             background: #e9ecef;
-            border-radius: 0.25rem;
+            border-radius: 4px;
             overflow: hidden;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
         }
         
         .progress {
@@ -302,192 +229,18 @@
         }
         
         .progress-text {
-            font-size: 0.8rem;
+            font-size: 14px;
             color: #6c757d;
             text-align: right;
         }
         
         .selected-folder {
-            margin-top: 1rem;
-            font-size: 0.9rem;
+            margin-top: 15px;
+            font-size: 14px;
             color: #6c757d;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-        }
-
-        /* Media Queries for Mobile Devices */
-        @media (max-width: 600px) {
-            body {
-                padding: 4vw;
-            }
-            
-            .container {
-                max-width: 95vw;
-                padding: 5vw;
-            }
-            
-            h1 {
-                font-size: 6vw;
-            }
-            
-            .upload-area {
-                padding: 5vw;
-            }
-            
-            .upload-icon {
-                font-size: 10vw;
-            }
-            
-            .upload-text {
-                font-size: 4vw;
-            }
-            
-            .upload-hint {
-                font-size: 3.5vw;
-            }
-            
-            .webhook-toggle {
-                font-size: 3.5vw;
-            }
-            
-            .webhook-input-container {
-                margin-bottom: 3vw;
-            }
-            
-            .webhook-input,
-            .contact-input {
-                padding: 3vw;
-                font-size: 4vw;
-            }
-            
-            .btn {
-                padding: 3vw 5vw;
-                font-size: 4vw;
-            }
-            
-            .contact-form h2 {
-                font-size: 4vw;
-            }
-            
-            .result-title {
-                font-size: 4vw;
-            }
-            
-            .stat-value {
-                font-size: 7vw;
-            }
-            
-            .stat-label {
-                font-size: 3.5vw;
-            }
-            
-            .like-btn {
-                font-size: 5vw;
-            }
-            
-            .like-count {
-                font-size: 3.5vw;
-            }
-            
-            .analysis-timestamp {
-                font-size: 3.5vw;
-            }
-            
-            .progress-bar {
-                height: 1.5vw;
-            }
-            
-            .progress-text {
-                font-size: 3vw;
-            }
-            
-            .selected-folder {
-                font-size: 3.5vw;
-            }
-        }
-
-        /* Media Queries for Laptops/PCs */
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 700px;
-                padding: 3rem;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .upload-area {
-                padding: 3rem;
-            }
-            
-            .upload-icon {
-                font-size: 4rem;
-            }
-            
-            .upload-text {
-                font-size: 1.5rem;
-            }
-            
-            .upload-hint {
-                font-size: 1rem;
-            }
-            
-            .webhook-toggle {
-                font-size: 1rem;
-            }
-            
-            .webhook-input,
-            .contact-input {
-                padding: 1rem;
-                font-size: 1.2rem;
-            }
-            
-            .btn {
-                padding: 1rem 2rem;
-                font-size: 1.2rem;
-            }
-            
-            .contact-form h2 {
-                font-size: 1.5rem;
-            }
-            
-            .result-title {
-                font-size: 1.5rem;
-            }
-            
-            .stat-value {
-                font-size: 2.5rem;
-            }
-            
-            .stat-label {
-                font-size: 1rem;
-            }
-            
-            .like-btn {
-                font-size: 2rem;
-            }
-            
-            .like-count {
-                font-size: 1.2rem;
-            }
-            
-            .analysis-timestamp {
-                font-size: 1rem;
-            }
-            
-            .progress-bar {
-                height: 0.75rem;
-            }
-            
-            .progress-text {
-                font-size: 0.9rem;
-            }
-            
-            .selected-folder {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -503,11 +256,6 @@
         </div>
         
         <div class="selected-folder" id="selectedFolder"></div>
-        
-        <div class="webhook-toggle" id="webhookToggle">Show Discord Webhook Settings</div>
-        <div class="webhook-input-container" id="webhookInputContainer">
-            <input type="text" class="webhook-input" id="webhookInput" placeholder="Enter Discord Webhook URL (optional)">
-        </div>
         
         <button class="btn" id="analyzeBtn" disabled>Analyze Folder</button>
         <button class="btn btn-reset" id="resetBtn">Reset</button>
@@ -532,17 +280,10 @@
                 </div>
             </div>
             <div class="like-container">
-                <button class="like-btn" id="likeBtn"><i class="far fa-heart"></i></button>
+                <button class="like-btn" id="likeBtn">❤️</button>
                 <span class="like-count" id="likeCount">0</span>
             </div>
             <div class="analysis-timestamp" id="analysisTimestamp"></div>
-        </div>
-        
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <input type="text" class="contact-input" id="contactName" placeholder="Your Name (optional)">
-            <textarea class="contact-input contact-input--textarea" id="contactMessage" placeholder="Your message or issue"></textarea>
-            <button class="btn" id="contactBtn">Send Feedback</button>
         </div>
     </div>
 
@@ -552,9 +293,6 @@
             const uploadArea = document.getElementById('uploadArea');
             const analyzeBtn = document.getElementById('analyzeBtn');
             const resetBtn = document.getElementById('resetBtn');
-            const webhookToggle = document.getElementById('webhookToggle');
-            const webhookInputContainer = document.getElementById('webhookInputContainer');
-            const webhookInput = document.getElementById('webhookInput');
             const resultContainer = document.getElementById('resultContainer');
             const fileCountEl = document.getElementById('fileCount');
             const folderCountEl = document.getElementById('folderCount');
@@ -563,9 +301,6 @@
             const progressContainer = document.getElementById('progressContainer');
             const progressBar = document.getElementById('progressBar');
             const progressText = document.getElementById('progressText');
-            const contactName = document.getElementById('contactName');
-            const contactMessage = document.getElementById('contactMessage');
-            const contactBtn = document.getElementById('contactBtn');
             const likeBtn = document.getElementById('likeBtn');
             const likeCountEl = document.getElementById('likeCount');
             
@@ -573,13 +308,6 @@
             let likeCount = 0;
             let isLiked = false;
             let folderPath = '';
-            
-            // Toggle webhook input visibility
-            webhookToggle.addEventListener('click', () => {
-                const isHidden = webhookInputContainer.style.display === 'none';
-                webhookInputContainer.style.display = isHidden ? 'block' : 'none';
-                webhookToggle.textContent = isHidden ? 'Hide Discord Webhook Settings' : 'Show Discord Webhook Settings';
-            });
             
             // Drag and drop functionality
             uploadArea.addEventListener('dragover', (e) => {
@@ -594,16 +322,7 @@
             uploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
                 uploadArea.classList.remove('active');
-                
-                const items = e.dataTransfer.items;
-                if (items.length > 0 && items[0].webkitGetAsEntry) {
-                    const entry = items[0].webkitGetAsEntry();
-                    if (entry.isDirectory) {
-                        folderInput.click();
-                    } else {
-                        alert('Please drop a folder, not a file.');
-                    }
-                }
+                alert('For security reasons, please use the file picker to select a folder.');
             });
             
             // Folder selection
@@ -614,9 +333,9 @@
                     const firstFile = selectedFiles[0];
                     const pathParts = firstFile.webkitRelativePath.split('/');
                     pathParts.pop();
-                    folderPath = pathParts.join(' > ') || 'Selected Folder';
+                    folderPath = pathParts.join(' > ');
                     
-                    selectedFolderEl.textContent = `Selected: ${folderPath}`;
+                    selectedFolderEl.textContent = `Selected: ${folderPath || 'Root Folder'}`;
                     analyzeBtn.disabled = false;
                     
                     // Load like data from localStorage
@@ -672,39 +391,6 @@
                 saveLikeData(folderPath);
             });
             
-            // Contact form submission
-            contactBtn.addEventListener('click', async () => {
-                const name = contactName.value.trim();
-                const message = contactMessage.value.trim();
-                const webhookUrl = webhookInput.value.trim();
-                
-                if (!message) {
-                    alert('Please enter a message.');
-                    return;
-                }
-                
-                if (!webhookUrl) {
-                    alert('Please provide a Discord webhook URL to send feedback.');
-                    return;
-                }
-                
-                contactBtn.disabled = true;
-                contactBtn.textContent = 'Sending...';
-                
-                try {
-                    await sendFeedbackToDiscord(webhookUrl, name, message);
-                    alert('Feedback sent successfully!');
-                    contactName.value = '';
-                    contactMessage.value = '';
-                } catch (error) {
-                    console.error('Failed to send feedback:', error);
-                    alert('Failed to send feedback. Please check the webhook URL.');
-                } finally {
-                    contactBtn.disabled = false;
-                    contactBtn.textContent = 'Send Feedback';
-                }
-            });
-            
             // Load like data from localStorage
             function loadLikeData(folderPath) {
                 try {
@@ -737,13 +423,12 @@
             
             // Update like button UI
             function updateLikeButton() {
-                likeBtn.innerHTML = `<i class="${isLiked ? 'fas' : 'far'} fa-heart"></i>`;
                 likeBtn.classList.toggle('liked', isLiked);
                 likeCountEl.textContent = likeCount.toLocaleString();
             }
             
             // Process the files
-            async function processFiles() {
+            function processFiles() {
                 progressText.textContent = 'Finalizing results...';
                 
                 let fileCount = 0;
@@ -765,7 +450,6 @@
                 const folderCount = folderPaths.size;
                 const timestamp = new Date().toLocaleString();
                 
-                // Update UI
                 fileCountEl.textContent = fileCount.toLocaleString();
                 folderCountEl.textContent = folderCount.toLocaleString();
                 analysisTimestamp.textContent = `Analyzed on: ${timestamp}`;
@@ -775,78 +459,6 @@
                 
                 animateValue(fileCountEl, 0, fileCount, 1000);
                 animateValue(folderCountEl, 0, folderCount, 1000);
-                
-                // Send to Discord webhook if URL is provided
-                const webhookUrl = webhookInput.value.trim();
-                if (webhookUrl) {
-                    try {
-                        await sendAnalysisToDiscord(webhookUrl, folderPath, fileCount, folderCount, likeCount, timestamp);
-                    } catch (error) {
-                        console.error('Failed to send to Discord:', error);
-                        alert('Failed to send analysis notification to Discord. Please check the webhook URL.');
-                    }
-                }
-            }
-            
-            // Send analysis data to Discord webhook
-            async function sendAnalysisToDiscord(webhookUrl, folderPath, fileCount, folderCount, likeCount, timestamp) {
-                const payload = {
-                    username: 'Folder Analyzer',
-                    avatar_url: 'https://i.imgur.com/AfFp7pu.png',
-                    embeds: [{
-                        title: 'Folder Analysis Report',
-                        description: `A new folder has been analyzed.`,
-                        color: 0x4361ee,
-                        fields: [
-                            { name: 'Folder Path', value: folderPath, inline: false },
-                            { name: 'Files', value: fileCount.toLocaleString(), inline: true },
-                            { name: 'Folders', value: folderCount.toLocaleString(), inline: true },
-                            { name: 'Likes', value: likeCount.toLocaleString(), inline: true }
-                        ],
-                        timestamp: new Date(timestamp).toISOString()
-                    }]
-                };
-                
-                const response = await fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-            }
-            
-            // Send feedback to Discord webhook
-            async function sendFeedbackToDiscord(webhookUrl, name, message) {
-                const payload = {
-                    username: 'Folder Analyzer Feedback',
-                    avatar_url: 'https://i.imgur.com/AfFp7pu.png',
-                    embeds: [{
-                        title: 'New Feedback Submission',
-                        description: message,
-                        color: 0xf72585,
-                        fields: [
-                            { name: 'Name', value: name || 'Anonymous', inline: false }
-                        ],
-                        timestamp: new Date().toISOString()
-                    }]
-                };
-                
-                const response = await fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
             }
             
             // Helper function to animate number counting
